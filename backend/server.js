@@ -8,23 +8,23 @@ const PORT = process.env.NODE_ENV || 5000;
 
 const app = express();
 
-//home page
-app.get('/', (req, res) => {
-    res.send('home page');
-});
+// //home page
+// app.get('/', (req, res) => {
+//     res.send('home page');
+// });
 
 app.use(express.json());
 
 //details page
 app.use('/details', requests);
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/build'));
+// if (process.env.NODE_ENV === 'production') {
+app.use(express.static('frontend/build'));
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve('frontend', 'build', 'index.html'));
-    });
-}
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve('frontend', 'build', 'index.html'));
+});
+// }
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
 
