@@ -10,11 +10,11 @@
     "install-frontend":"cd frontend && npm install",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-frontend && npm run build"
   },
-  "engines": {
-    "node": "10.16.0"
-  },
   "author": "Abhishek",
   "license": "ISC",
+  "engines": {
+    "node": "14.15.1"
+  },
   "dependencies": {
     "csv-parser": "^3.0.0",
     "csv-write-stream": "^2.0.0",
